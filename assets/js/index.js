@@ -12,6 +12,7 @@ function getUserInfo() {
       layer.msg("获取用户信息成功！");
       renderAvatar(res.data);
     },
+    
   });
 }
 //渲染用户信息

@@ -5,6 +5,17 @@ $.ajaxPrefilter((option) => {
     if (option.url.includes('/my/')) {
       option.headers={
         Authorization: localStorage.getItem("token"),
-      }
+      };
     }
+    //权限校验
+    option.complete= (res) => {
+      if (
+        res.responseJSON.status === 1 &&
+        res.responseJSON.message === "身份认证失败！"
+      ) {
+        localStorage.removeItem("token");
+        //跳转登陆页面
+        location.href = "/login.html";
+      }
+    };
   });
