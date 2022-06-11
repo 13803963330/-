@@ -1,7 +1,7 @@
 $.ajaxPrefilter((option) => {
     // 在发起真正的 Ajax 请求之前，统一拼接请求的根路径
     console.log(option);
-    option.url = `http://www.liulongbin.top:3007` + option.url;
+    option.url = `http://big-event-api-t.itheima.net` + option.url;
     if (option.url.includes('/my/')) {
       option.headers={
         Authorization: localStorage.getItem("token"),

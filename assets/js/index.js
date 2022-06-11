@@ -36,7 +36,7 @@ $("#btnLogout").click(() => {
   layui.layer.confirm(
     "确定退出登录？",
     { icon: 3, title: "提示" },
-    function (index) {
+    function (e) {
       // 清空本地存储里面的 token
       localStorage.removeItem("token");
       // 重新跳转到登录页面
