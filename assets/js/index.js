@@ -12,7 +12,6 @@ function getUserInfo() {
       layer.msg("获取用户信息成功！");
       renderAvatar(res.data);
     },
-    
   });
 }
 //渲染用户信息
@@ -45,3 +44,8 @@ $("#btnLogout").click(() => {
   );
 });
 getUserInfo();
+
+//切换高亮
+function change() {
+  $("#change").addClass("layui-this").next().removeClass("layui-this");
+}
